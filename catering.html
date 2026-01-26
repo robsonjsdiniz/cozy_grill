@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catering & Party Packages - Cozy Grill Bar</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .package-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .package-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .package-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .package-content {
+            padding: 25px;
+        }
+        
+        .package-price {
+            color: #c00;
+            font-size: 1.5em;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+        
+        .package-features {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+        
+        .package-features li {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .package-features li:last-child {
+            border-bottom: none;
+        }
+        
+        .package-features i {
+            color: #c00;
+            margin-right: 10px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: #c00;
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.3s ease;
+        }
+        
+        .cta-button:hover {
+            background: #a00;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .section-title h2 {
+            color: #333;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .section-title p {
+            color: #666;
+            font-size: 1.1em;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container section">
+    <div class="section-title">
+        <h1>Catering & Party Packages</h1>
+        <p>Make your event unforgettable with our professional catering services. From intimate gatherings to large celebrations, we've got you covered.</p>
+    </div>
+
+    <div class="packages-grid">
+        <!-- Bronze Package -->
+        <div class="package-card">
+            <img src="https://images.unsplash.com/photo-1555244162-803834f70033?ixlib=rb-4.0.3&auto=format&fit=crop&w=1081&q=80" alt="Small Gathering" class="package-image">
+            <div class="package-content">
+                <h3>Bronze Package</h3>
+                <p class="package-price">$25 per person</p>
+                <p>Perfect for small gatherings and office parties (10-30 people)</p>
+                <ul class="package-features">
+                    <li><i class="fas fa-check"></i> 3 Appetizer Options</li>
+                    <li><i class="fas fa-check"></i> 2 Main Course Options</li>
+                    <li><i class="fas fa-check"></i> 1 Dessert Option</li>
+                    <li><i class="fas fa-check"></i> Non-alcoholic Beverages</li>
+                    <li><i class="fas fa-check"></i> Basic Table Setup</li>
+                </ul>
+                <a href="contact.html" class="cta-button">Book Now</a>
+            </div>
+        </div>
+
+        <!-- Silver Package -->
+        <div class="package-card">
+            <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&auto=format&fit=crop&w=1081&q=80" alt="Wedding Reception" class="package-image">
+            <div class="package-content">
+                <h3>Silver Package</h3>
+                <p class="package-price">$45 per person</p>
+                <p>Ideal for weddings and large celebrations (30-100 people)</p>
+                <ul class="package-features">
+                    <li><i class="fas fa-check"></i> 5 Appetizer Options</li>
+                    <li><i class="fas fa-check"></i> 3 Main Course Options</li>
+                    <li><i class="fas fa-check"></i> 2 Dessert Options</li>
+                    <li><i class="fas fa-check"></i> Wine & Beer Service</li>
+                    <li><i class="fas fa-check"></i> Professional Staff (4 hours)</li>
+                    <li><i class="fas fa-check"></i> Elegant Table Setup</li>
+                </ul>
+                <a href="contact.html" class="cta-button">Book Now</a>
+            </div>
+        </div>
+
+        <!-- Gold Package -->
+        <div class="package-card">
+            <img src="https://images.unsplash.com/photo-1492681290082-e932832941e6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1081&q=80" alt="Corporate Event" class="package-image">
+            <div class="package-content">
+                <h3>Gold Package</h3>
+                <p class="package-price">$65 per person</p>
+                <p>Premium service for corporate events (50-200 people)</p>
+                <ul class="package-features">
+                    <li><i class="fas fa-check"></i> 7 Appetizer Options</li>
+                    <li><i class="fas fa-check"></i> 4 Main Course Options</li>
+                    <li><i class="fas fa-check"></i> 3 Dessert Options</li>
+                    <li><i class="fas fa-check"></i> Full Bar Service</li>
+                    <li><i class="fas fa-check"></i> Professional Staff (6 hours)</li>
+                    <li><i class="fas fa-check"></i> Premium Table Setup</li>
+                    <li><i class="fas fa-check"></i> Custom Menu Design</li>
+                    <li><i class="fas fa-check"></i> Event Coordinator</li>
+                </ul>
+                <a href="contact.html" class="cta-button">Book Now</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom Packages Section -->
+    <div class="section" style="margin-top: 60px; background: #f9f9f9; padding: 40px; border-radius: 10px;">
+        <div style="text-align: center;">
+            <h2>Custom Packages Available</h2>
+            <p style="max-width: 600px; margin: 20px auto; line-height: 1.6;">
+                Don't see exactly what you need? We specialize in creating customized catering solutions 
+                tailored to your specific requirements. Whether it's a themed party, dietary restrictions, 
+                or unique venue challenges, our team will work with you to create the perfect experience.
+            </p>
+            <div style="margin-top: 30px;">
+                <a href="contact.html" class="cta-button" style="background: #333;">Request Custom Quote</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Gallery Section -->
+    <div style="margin-top: 60px;">
+        <h2 style="text-align: center; margin-bottom: 30px;">Our Events Gallery</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1081&q=80" alt="Wedding Catering">
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1544025162-d76694265947?ixlib=rb-4.0.3&auto=format&fit=crop&w-1081&q=80" alt="Corporate Event">
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1554672408-730436b60dde?ixlib=rb-4.0.3&auto=format&fit=crop&w=1081&q=80" alt="Birthday Party">
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1559925393-8be0ec4767c8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1081&q=80" alt="Outdoor Event">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- COMPONENTES -->
+<script src="assets/js/header.js"></script>
+<script src="assets/js/footer.js"></script>
+
+</body>
+</html>

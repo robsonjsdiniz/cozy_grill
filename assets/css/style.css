@@ -333,6 +333,15 @@ section {
             color: var(--secondary);
             margin-bottom: 20px;
         }
+        .highlights-grid a {
+            color: #111;
+            text-decoration: none;
+        }
+        .highlights-grid a:hover{
+            
+            color: #8B0000;
+            
+        }
 
 /* ================= FOOTER ================= */
 footer {

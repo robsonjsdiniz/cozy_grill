@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,24 +6,158 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menu - Cozy Grill Bar</title>
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .menu-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .menu-modal-content {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            max-width: 500px;
+            width: 90%;
+            position: relative;
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 24px;
+            cursor: pointer;
+            color: #333;
+        }
+        
+        .food-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .food-item {
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .food-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .food-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .food-info {
+            padding: 20px;
+        }
+        
+        .food-price {
+            color: #c00;
+            font-weight: bold;
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
+        
+        .food-description {
+            color: #666;
+            margin-top: 10px;
+            display: none;
+        }
+    </style>
 </head>
 <body>
 
-
-
 <div class="container section">
     <h1>Our Menu</h1>
+    
+    <div class="food-grid">
+        <!-- Ribeye Steak -->
+        <div class="food-item" onclick="showFoodDetail(1)">
+            <img src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1081&q=80" alt="Ribeye Steak">
+            <div class="food-info">
+                <h3>Ribeye Steak</h3>
+                <p class="food-price">$28</p>
+                <p class="food-description">Premium 12oz ribeye steak, dry-aged for 21 days, served with roasted vegetables and your choice of mashed or baked potato. Our signature dish!</p>
+            </div>
+        </div>
 
-    <div class="menu-section">
-        <h2>Grill Specials</h2>
-        <div class="menu-item"><span>Ribeye Steak</span><strong>$28</strong></div>
-        <div class="menu-item"><span>BBQ Ribs</span><strong>$24</strong></div>
+        <!-- BBQ Ribs -->
+        <div class="food-item" onclick="showFoodDetail(2)">
+            <img src="https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1081&q=80" alt="BBQ Ribs">
+            <div class="food-info">
+                <h3>BBQ Ribs</h3>
+                <p class="food-price">$24</p>
+                <p class="food-description">Slow-cooked pork ribs with our secret BBQ sauce, served with coleslaw and french fries. Fall-off-the-bone tender!</p>
+            </div>
+        </div>
+
+        <!-- Classic Burger -->
+        <div class="food-item" onclick="showFoodDetail(3)">
+            <img src="https://images.unsplash.com/photo-1572802419224-296b0aeee0d9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1081&q=80" alt="Classic Burger">
+            <div class="food-info">
+                <h3>Classic Burger</h3>
+                <p class="food-price">$14</p>
+                <p class="food-description">8oz beef patty with lettuce, tomato, onion, pickles, and our special sauce on a brioche bun. Served with fries.</p>
+            </div>
+        </div>
+
+        <!-- Bacon Burger -->
+        <div class="food-item" onclick="showFoodDetail(4)">
+            <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?ixlib=rb-4.0.3&auto=format&fit=crop&w=1081&q=80" alt="Bacon Burger">
+            <div class="food-info">
+                <h3>Bacon Burger</h3>
+                <p class="food-price">$16</p>
+                <p class="food-description">Classic burger topped with crispy bacon, cheddar cheese, caramelized onions, and BBQ sauce. A meat lover's dream!</p>
+            </div>
+        </div>
+
+        <!-- Grilled Salmon -->
+        <div class="food-item" onclick="showFoodDetail(5)">
+            <img src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?ixlib=rb-4.0.3&auto=format&fit=crop&w=1081&q=80" alt="Grilled Salmon">
+            <div class="food-info">
+                <h3>Grilled Salmon</h3>
+                <p class="food-price">$22</p>
+                <p class="food-description">Atlantic salmon fillet with lemon butter sauce, served with quinoa salad and seasonal vegetables. Healthy and delicious!</p>
+            </div>
+        </div>
+
+        <!-- Vegetarian Platter -->
+        <div class="food-item" onclick="showFoodDetail(6)">
+            <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1081&q=80" alt="Vegetarian Platter">
+            <div class="food-info">
+                <h3>Vegetarian Platter</h3>
+                <p class="food-price">$18</p>
+                <p class="food-description">Grilled vegetables, falafel, hummus, tabbouleh, and pita bread. A perfect option for vegetarians!</p>
+            </div>
+        </div>
     </div>
+</div>
 
-    <div class="menu-section">
-        <h2>Burgers</h2>
-        <div class="menu-item"><span>Classic Burger</span><strong>$14</strong></div>
-        <div class="menu-item"><span>Bacon Burger</span><strong>$16</strong></div>
+<!-- Modal for Food Details -->
+<div id="foodModal" class="menu-modal">
+    <div class="menu-modal-content">
+        <span class="close-modal" onclick="closeFoodModal()">&times;</span>
+        <div id="modalContent">
+            <!-- Content will be loaded here -->
+        </div>
     </div>
 </div>
 
@@ -30,8 +165,74 @@
 <script src="assets/js/header.js"></script>
 <script src="assets/js/footer.js"></script>
 
+<script>
+    const foodDetails = {
+        1: {
+            title: "Ribeye Steak",
+            price: "$28",
+            description: "Premium 12oz ribeye steak, dry-aged for 21 days to enhance flavor and tenderness. Grilled to perfection and served with roasted seasonal vegetables and your choice of creamy mashed potatoes or baked potato with all the fixings. Our signature dish that keeps customers coming back!",
+            image: "https://images.unsplash.com/photo-1546833999-b9f581a1996d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1081&q=80"
+        },
+        2: {
+            title: "BBQ Ribs",
+            price: "$24",
+            description: "Slow-cooked pork ribs for 4 hours in our secret BBQ sauce blend, resulting in fall-off-the-bone tenderness. Served with homemade coleslaw and crispy french fries. The perfect combination of sweet, tangy, and smoky flavors!",
+            image: "https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1081&q=80"
+        },
+        3: {
+            title: "Classic Burger",
+            price: "$14",
+            description: "8oz freshly ground beef patty cooked to your preference, topped with crisp lettuce, ripe tomato, red onion, pickles, and our special sauce on a toasted brioche bun. Served with a side of golden french fries. A timeless classic!",
+            image: "https://images.unsplash.com/photo-1553979459-d2229ba7433d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1081&q=80"
+        },
+        4: {
+            title: "Bacon Burger",
+            price: "$16",
+            description: "Our classic burger elevated with crispy applewood smoked bacon, melted cheddar cheese, caramelized onions, and a drizzle of BBQ sauce. Served on a brioche bun with lettuce, tomato, and a side of fries. A meat lover's dream come true!",
+            image: "https://images.unsplash.com/photo-1550547660-d9450f859349?ixlib=rb-4.0.3&auto=format&fit=crop&w=1081&q=80"
+        },
+        5: {
+            title: "Grilled Salmon",
+            price: "$22",
+            description: "Fresh Atlantic salmon fillet grilled with a delicate lemon butter sauce. Served with a quinoa salad mixed with fresh herbs and seasonal roasted vegetables. A healthy and flavorful option that doesn't compromise on taste!",
+            image: "https://images.unsplash.com/photo-1467003909585-2f8a72700288?ixlib=rb-4.0.3&auto=format&fit=crop&w=1081&q=80"
+        },
+        6: {
+            title: "Vegetarian Platter",
+            price: "$18",
+            description: "A colorful assortment of grilled seasonal vegetables, homemade falafel, creamy hummus, fresh tabbouleh salad, and warm pita bread. Perfect for vegetarians or anyone looking for a lighter, plant-based meal option!",
+            image: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1081&q=80"
+        }
+    };
 
+    function showFoodDetail(id) {
+        const food = foodDetails[id];
+        const modalContent = document.getElementById('modalContent');
+        const modal = document.getElementById('foodModal');
+        
+        modalContent.innerHTML = `
+            <img src="${food.image}" alt="${food.title}" style="width:100%; height:200px; object-fit:cover; border-radius:5px;">
+            <h2 style="margin-top:20px;">${food.title}</h2>
+            <h3 style="color:#c00; margin:10px 0;">${food.price}</h3>
+            <p style="line-height:1.6;">${food.description}</p>
+            <button onclick="closeFoodModal()" style="margin-top:20px; padding:10px 20px; background:#c00; color:white; border:none; border-radius:5px; cursor:pointer;">Close</button>
+        `;
+        
+        modal.style.display = 'flex';
+    }
 
+    function closeFoodModal() {
+        document.getElementById('foodModal').style.display = 'none';
+    }
+
+    // Close modal when clicking outside
+    window.onclick = function(event) {
+        const modal = document.getElementById('foodModal');
+        if (event.target == modal) {
+            modal.style.display = 'none';
+        }
+    }
+</script>
 
 </body>
 </html>
